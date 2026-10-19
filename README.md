@@ -207,7 +207,7 @@ while not success:
 <table>
   <tr>
     <td align="center" width="38%"><img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Arjit774&theme=radical" alt="Arjit774's productive hours" /></td>
-    <td align="center" width="62%"><img src="https://raw.githubusercontent.com/Arjit774/Arjit774/output/trophy.svg" alt="Arjit774's GitHub trophies" width="100%" /></td>
+    <td align="center" width="62%"><img src="https://trophy.ryglcloud.net/?username=Arjit774&theme=radical&row=1&column=6" alt="Arjit774's GitHub trophies" width="100%" /></td>
   </tr>
 </table>
 

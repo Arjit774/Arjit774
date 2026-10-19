@@ -35,12 +35,18 @@ jobs:
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
             dist/github-contribution-grid-snake-light.svg?palette=github-light
 
+      # The trophy renderer talks to the GraphQL API, which needs a PAT with the
+      # read:user scope — a workflow GITHUB_TOKEN is not enough. Add a classic PAT
+      # as the TROPHY_TOKEN repository secret to enable self-hosted trophies.
       - name: Generate GitHub trophies
         id: trophies
         continue-on-error: true
+        if: env.TROPHY_TOKEN != ''
+        env:
+          TROPHY_TOKEN: ${{ secrets.TROPHY_TOKEN }}
         uses: Erik-Donath/github-profile-trophy@feature/generate-svg
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ env.TROPHY_TOKEN }}
           username: ${{ github.repository_owner }}
           file: dist/trophy.svg
           theme: radical

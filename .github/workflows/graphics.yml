@@ -1,0 +1,74 @@
+name: Generate Contribution Graphics
+
+# Renders the contribution snake + trophy wall as SVGs and publishes them
+# to the `output` branch, which the profile README serves via raw.githubusercontent.com.
+# Self-hosted on purpose: no third-party image service, no rate limits, no 402s.
+
+on:
+  schedule:
+    - cron: "23 4 * * *" # every day at 04:23 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/graphics.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: graphics
+  cancel-in-progress: true
+
+jobs:
+  graphics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v4
+
+      - name: Generate contribution snake (dark + light)
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake-light.svg?palette=github-light
+
+      - name: Generate GitHub trophies
+        id: trophies
+        continue-on-error: true
+        uses: Erik-Donath/github-profile-trophy@feature/generate-svg
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ github.repository_owner }}
+          file: dist/trophy.svg
+          theme: radical
+          max-cols: 6
+          max-rows: 1
+          no-background: true
+          no-frame: true
+
+      - name: Publish artwork to the output branch
+        if: always()
+        run: |
+          set -euo pipefail
+          cd dist
+
+          git init -q
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "::notice::Artwork unchanged — skipping publish."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "chore: refresh contribution graphics"
+
+          git push -f \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository_owner }}/${{ github.repository }}.git" \
+            HEAD:output
+
+          echo "::notice::Published to the output branch."

@@ -78,7 +78,7 @@ jobs:
           git commit -q -m "chore: refresh contribution graphics"
 
           git push -f \
-            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository_owner }}/${{ github.repository }}.git" \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" \
             HEAD:output
 
           echo "::notice::Published to the output branch."

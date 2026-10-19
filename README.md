@@ -35,6 +35,7 @@
 
 ## 🧪 About Me
 
+<div align="center">
 <table>
   <tr>
     <td align="center" width="33%"><b>🎓 Studying</b><br /><sub>B.Tech CSE — AI/ML</sub></td>
@@ -42,16 +43,19 @@
     <td align="center" width="33%"><b>☕ Fuel</b><br /><sub>Coffee &amp; late nights</sub></td>
   </tr>
 </table>
+</div>
 
-Hey — I'm **Arjit Sharma**, a Computer Science undergraduate specialising in **AI/ML**, and I like the messy middle of software: the part where a rough idea, a stubborn bug and a 2 AM coffee meet.
 
-I care about building things that are **actually useful** — safety tools that respond in real time, care systems that keep families in sync, models that are honest about their confidence. Most of my work sits at the intersection of **backend engineering** and **machine learning**, and I'm endlessly curious about both.
+Hey I'm **Arjit Sharma**, a Computer Science undergraduate specialising in **AI/ML**, and I like the messy middle of software: the part where a rough idea, a stubborn bug and a 2 AM coffee meet.
+
+I care about building things that are **actually useful** safety tools that respond in real time, care systems that keep families in sync, models that are honest about their confidence. Most of my work sits at the intersection of **backend engineering** and **machine learning**, and I'm endlessly curious about both.
 
 When I'm not shipping, I'm probably watching anime, sketching UI in Figma, or reading about architectures I don't understand yet (that's usually where the good ideas come from).
 
-**☕ The Alchemist's Loop** — my entire development cycle, in eight lines:
+<div align="center">
+<b>☕ The Alchemist's Loop</b> — my entire development cycle, in eight lines:
 
-```python
+<pre>
 while not success:
     try_again()
     if coffee_empty:
@@ -60,20 +64,35 @@ while not success:
         watch_anime()
     else:
         ship_it()
-```
+</pre>
+</div>
 
 ---
+
 
 <a id="contents"></a>
 
 ## 🗺️ Contents
 
-| | | | |
-|:--|:--|:--|:--|
-| 🧪 [About](#about) | 🚀 [Projects](#projects) | 🧰 [Stack](#stack) | 📊 [Analytics](#analytics) |
-| 🌸 [Anime Corner](#anime) | 🌱 [Leveling Up](#leveling-up) | 📬 [Connect](#connect) | 💭 [Mantra](#mantra) |
+<div align="center">
+<table table-layout="fixed" width="100%">
+  <tr>
+    <td align="center" width="25%">🧪 <a href="#about">About</a></td>
+    <td align="center" width="25%">🚀 <a href="#projects">Projects</a></td>
+    <td align="center" width="25%">🧰 <a href="#stack">Stack</a></td>
+    <td align="center" width="25%">📊 <a href="#analytics">Analytics</a></td>
+  </tr>
+  <tr>
+    <td align="center">🌸 <a href="#anime">Anime Corner</a></td>
+    <td align="center">🌱 <a href="#leveling-up">Leveling Up</a></td>
+    <td align="center">📬 <a href="#connect">Connect</a></td>
+    <td align="center">💭 <a href="#mantra">Mantra</a></td>
+  </tr>
+</table>
+</div>
 
 ---
+
 
 <a id="projects"></a>
 
@@ -211,8 +230,6 @@ while not success:
   </tr>
 </table>
 
-> 💡 If the streak card ever shows "Error fetching details", GitHub is temporarily throttling the image host — the link itself still works in the browser.
-
 ---
 
 <a id="anime"></a>
@@ -223,17 +240,20 @@ while not success:
 
 <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="300" alt="Anime coding animation" />
 
-> “A lesson without pain is meaningless.” — *Fullmetal Alchemist*
->
-> “Power comes in response to a need, not a desire.” — *Dragon Ball Z*
->
-> “Those who do not learn from history are condemned to repeat it.” — *Hajime no Ippo*
+<blockquote>“A lesson without pain is meaningless.” — <i>Fullmetal Alchemist</i></blockquote>
+
+<blockquote>“Power comes in response to a need, not a desire.” — <i>Dragon Ball Z</i></blockquote>
+
+<blockquote>“Those who do not learn from history are condemned to repeat it.” — <i>Hajime no Ippo</i></blockquote>
+
+<br />
+
+<blockquote><b>Debugging is just a training arc for better code. And every project is a new season.</b></blockquote>
 
 </div>
 
-> Debugging is just a training arc for better code. And every project is a new season.
-
 ---
+
 
 <a id="leveling-up"></a>
 

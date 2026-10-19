@@ -53,6 +53,16 @@ jobs:
         if: always()
         run: |
           set -euo pipefail
+
+          if [ ! -d dist ]; then
+            echo "::error::No artwork was generated."
+            exit 1
+          fi
+
+          # Platane/snk runs inside Docker and leaves root-owned files behind,
+          # which stops the runner user from creating .git inside dist/.
+          sudo chown -R "$(id -u):$(id -g)" dist
+
           cd dist
 
           git init -q
